@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { gql } from '@apollo/client';
 import client from '../../config/apollo';
+import { Layout } from '../../components/Layout';
  
 class Home extends Component {
     constructor(props){
@@ -34,7 +35,6 @@ class Home extends Component {
             this.setState({initialData: result.data}, ()=> {
                 this.setState({loading:false})
             })
-            console.log(result.data.posts.data);
         });
 
    }
@@ -42,15 +42,17 @@ class Home extends Component {
         const {initialData, loading } = this.state;
         return(
             <>
-                {loading ? 
-                    (
-                        <p>cargando...</p>
-                    ): (
-                        initialData?.posts?.data.map((item)=>{
-                        return(<div key={item.id}>{item.id} - {item.title}</div>)
-                        })
-                    )
-                } 
+                <Layout>
+                    {loading ? 
+                        (
+                            <p>cargando...</p>
+                        ): (
+                            initialData?.posts?.data.map((item)=>{
+                            return(<div key={item.id}>{item.id} - {item.title}</div>)
+                            })
+                        )
+                    } 
+                </Layout>
             </>
         )
     }
