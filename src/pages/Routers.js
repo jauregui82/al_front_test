@@ -15,7 +15,7 @@ export const Routes = props => {
                     exact
                 />
                 <Route
-                    path="/details"
+                    path="/detail-post/:id"
                     component={Detail}
                     exact
                 />

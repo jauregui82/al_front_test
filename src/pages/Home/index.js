@@ -23,12 +23,17 @@ class Home extends Component {
             {
                 posts(options: {paginate:{page:${paginate.page}, limit:${paginate.limit}}}) {
                     data {
-                    id
-                    title
-                    body
+                        id
+                        title
+                        body
+                        comments{
+                            data{
+                              id
+                            }
+                        }
                     }
                     meta {
-                    totalCount
+                        totalCount
                     }
                 }
             }
@@ -52,7 +57,13 @@ class Home extends Component {
                         ): (
                             initialData?.posts?.data.map((item)=>{
                             return(
-                                <CardPost key={item.id} id={item.id} title={item.title} body={item.body} />
+                                <CardPost 
+                                    key={item.id} 
+                                    id={item.id} 
+                                    title={item.title} 
+                                    body={item.body} 
+                                    comments={item.comments.data.length} 
+                                />
                                 )
                             })
                         )

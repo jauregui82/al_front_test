@@ -78,3 +78,13 @@ p {
   box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
   cursor: pointer;
 }
+.comments{
+    background: url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/1765/icon-chat.svg) no-repeat 0 .1em;
+    width: 16px;
+    height: 16px;
+    margin-right: 1rem;
+}
+.contentDateComments, .constentComments{
+    display: flex;
+    justify-content: space-between; 
+}
