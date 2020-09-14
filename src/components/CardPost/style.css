@@ -76,4 +76,5 @@ p {
 
 .btn_primary:hover {
   box-shadow: 0px 5px 1rem rgba(255, 94, 98, 0.5);
+  cursor: pointer;
 }

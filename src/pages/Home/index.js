@@ -52,7 +52,7 @@ class Home extends Component {
                         ): (
                             initialData?.posts?.data.map((item)=>{
                             return(
-                                <CardPost key={item.id} title={item.title} body={item.body} />
+                                <CardPost key={item.id} id={item.id} title={item.title} body={item.body} />
                                 )
                             })
                         )
