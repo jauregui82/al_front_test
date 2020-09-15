@@ -11,6 +11,12 @@ header {
     position: absolute;
     width: 100%;
     z-index: 1;
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
 }
 
 main {

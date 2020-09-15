@@ -19,28 +19,28 @@ const GET_POST = gql`
     query ($id: ID!){
         post(id: $id) {
             id
+              body
             title
-            body
+              user{
+              id
+              name
+              email
+            }
+              comments{
+              data{
+                id
+                name
+                email
+                body
+              }
+            }
         }
     }
 `;
 
-// const GET_PAYER_REPRESENTATIVES = gql`
-//   query representativesOfPayerCompany($enterprise_id: Int!) {
-//     representativesOfPayerCompany(enterprise_id: $enterprise_id) {
-//       relation_id
-//       can_edit
-//       representative {
-//         user
-//         user_data {
-//           first_name
-//           last_name
-//           is_active
-//         }
-//         document_number
-//       }
-//     }
-//   }
-// `;
-
-export {GET_ALL_POST, GET_POST}
+const DELETE_COMMENT = gql`
+    mutation ($id: ID!){
+        deleteComment(id: $id)
+    }
+`;
+export {GET_ALL_POST, GET_POST, DELETE_COMMENT}
