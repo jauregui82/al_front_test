@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { Link } from 'react-router-dom';
-import './style.css'
+import './style.scss'
 import moment from 'moment';
 
 const randomDate = (start, end) => {
@@ -15,16 +15,17 @@ export class CardPost extends PureComponent {
         const {body, comments, id, title} = this.props
         return(
             <div className="wrapper">
-                <div className="blog_post">
-                    <div className="container_copy">
-                        <div className="contentDateComments">
+                <div className="blog-post">
+                    <div className="container-copy">
+                        <div className="content-date-comments">
                             <h3>{randomDate(new Date(2012, 0, 1), new Date())}</h3>
-                            <div className="constentComments"><div className="comments"></div><h3>{`${comments} comments`}</h3></div>
+                            <div className="constent-comments">
+                                <div className="comments"/><h3>{`${comments} comments`}</h3></div>
                         </div>
                         <h1>{title}</h1>
                         <p>{body}</p>
                     </div>
-                    <Link className="btn_primary" to={location(id)} >Read More</Link>
+                    <Link className="btn-primary" to={location(id)} >Read More</Link>
                 </div>
             </div>
         )

@@ -1,14 +1,16 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,400,700&display=swap");
+@import "./assets/scss/variables.scss";
+@import url($urlFont);
+
 html {
-  font-family: 'Roboto', sans-serif;
+  font-family: $font;
   font-size: 12px;
 }
 
 
 body {
-  background: #1488cc;
-  background: -webkit-linear-gradient(to right, #2b32b2, #1488cc);
-  background: linear-gradient(to right,#2b32b2,#1488cc);
+  background: $bgColor;
+  background: -webkit-linear-gradient(to right, $bgColorGradient, $bgColor);
+  background: linear-gradient(to right,$bgColorGradient,$bgColor);
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
