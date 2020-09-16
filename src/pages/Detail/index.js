@@ -12,7 +12,7 @@ const Detail = () => {
   const [updatePost] = useMutation(UPDATE_POST);
   const history = useHistory();
 
-  const { data, error, loading } = useQuery(GET_POST, {
+  const { data, error, refetch, loading } = useQuery(GET_POST, {
     variables: { id },
     fetchPolicy: "network-only"
   });
@@ -25,6 +25,7 @@ const Detail = () => {
     const payload = { id: id };
     try {
       await removeComment({ variables: payload });
+      refetch();
       alert("Deleted comment");
     } catch (e) {
       console.error(e);
@@ -61,13 +62,23 @@ const Detail = () => {
             <meta charSet="utf-8" />
             <title>My Title</title>
             <meta name="description" content={data?.post.body} />
+            <link rel="me" href="mailto:jauregui.crespo@gmail.com" />
+            <link rel="me" href="sms:+56937393963" />
             <link
               rel="me"
               href="https://jauregui82.github.io/cv/"
               type="text/html"
             />
-            <link rel="me" href="mailto:jauregui.crespo@gmail.com" />
-            <link rel="me" href="sms:+56937393963" />
+            <meta
+              property="og:url"
+              content="https://jauregui82.github.io/cv/"
+            />
+            <meta
+              property="og:image"
+              content="https://avatars0.githubusercontent.com/u/13053881?s=400&u=608e5c8eb29c6c8083a9128a725dbbb919622c4d&v=4"
+            />
+            <meta property="og:site_name" content={data?.post.body} />
+            <meta property="og:description" content={data?.post.body} />
           </Helmet>
           <CardPost
             origin={"detail"}
