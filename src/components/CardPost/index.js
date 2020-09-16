@@ -73,7 +73,6 @@ export class CardPost extends PureComponent {
               />
             )}
           </div>
-
           {!origin ? (
             <>
               {addPost ? (

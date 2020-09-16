@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.scss';
-import * as serviceWorker from './serviceWorker';
-import { Routes } from './pages/Routers';
-import client from './config/apollo';
-import { ApolloProvider } from '@apollo/client';
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.scss";
+import * as serviceWorker from "./serviceWorker";
+import { Routes } from "./pages/Routers";
+import client from "./config/apollo";
+import { ApolloProvider } from "@apollo/client";
 
 ReactDOM.render(
   <React.StrictMode>
@@ -12,7 +12,7 @@ ReactDOM.render(
       <Routes />
     </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want your app to work offline and load faster, you can change
