@@ -13,7 +13,10 @@ export const Layout = ({ children, count }) => {
       <header>
         {count && (
           <div>
-            <Link to={locationSend("new-post")}> Add new post</Link>
+            <Link className={"btn-standar"} to={locationSend("new-post")}>
+              {" "}
+              Add new post
+            </Link>
             <span> {count.length} - post length</span>
           </div>
         )}
@@ -21,7 +24,7 @@ export const Layout = ({ children, count }) => {
       <main>
         <div className={"contentCard"}>{children}</div>
       </main>
-      <footer>footer</footer>
+      <footer />
     </div>
   );
 };

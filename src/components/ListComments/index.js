@@ -13,6 +13,7 @@ export class ListComments extends PureComponent {
                   <button
                     style={{ marginRight: "1rem" }}
                     onClick={() => deleteComment(item.id)}
+                    className={"btn-standar"}
                   >
                     x
                   </button>

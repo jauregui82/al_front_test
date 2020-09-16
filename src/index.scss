@@ -25,3 +25,14 @@ code {
 }
 
 
+.btn-standar {
+  background-color: azure;
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-decoration: none;
+  color: #000;
+  &:hover{
+      color: #fff;
+      background-color: #ff9865;
+  }
+}

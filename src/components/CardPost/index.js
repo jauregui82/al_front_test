@@ -16,14 +16,7 @@ const locationSend = (url, id) => ({
   state: { fromDashboard: true }
 });
 
-const AddOrUpdatePost = ({
-  flag,
-  body,
-  title,
-  user,
-  inputValues,
-  changeValues
-}) => {
+const AddOrUpdatePost = ({ inputValues, changeValues }) => {
   return (
     <>
       <input
@@ -136,7 +129,7 @@ class CardPost extends Component {
         <div className="content-btn-action">
           {!origin || !this.verifyUpdate() ? (
             <Link
-              className="btn-edit-post"
+              className={"btn-standar"}
               to={locationSend("update-post", id)}
             >
               edit
@@ -147,7 +140,7 @@ class CardPost extends Component {
           {origin || this.verifyUpdate() ? (
             <div />
           ) : (
-            <button className="btn-delete-post" onClick={() => deletePost(id)}>
+            <button className={"btn-standar"} onClick={() => deletePost(id)}>
               delete
             </button>
           )}
