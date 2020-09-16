@@ -1,0 +1,49 @@
+{
+  "extends": [
+    "eslint:recommended",
+    "react-app",
+    "plugin:react/recommended",
+    "prettier",
+    "prettier/react"
+  ],
+  "env": {
+    "browser": true,
+    "jest": true
+  },
+  "plugins": [
+    "react",
+    "jsx-a11y",
+    "import",
+    "prettier"
+  ],
+  "settings": {
+    "react": {
+      "version": "16.13.1"
+    }
+  },
+  "rules": {
+    "prettier/prettier": ["error"],
+    "react/display-name": ["off"],
+    "no-console": ["off"],
+    "no-multi-spaces": ["error"],
+    "no-case-declarations": ["off"],
+    "jsx-quotes": ["error"],
+    "jsx-a11y/alt-text": ["error"],
+    "jsx-a11y/img-redundant-alt": ["error"],
+    "jsx-a11y/no-access-key": ["error"],
+    "react/prefer-es6-class": ["error"],
+    "react/prefer-stateless-function": ["off"],
+    "react/no-string-refs": ["error"],
+    "react/self-closing-comp": ["error"],
+    "react/require-render-return": ["error"],
+    "react/prop-types": ["off"],
+    "react/jsx-pascal-case": ["error"],
+    "react/jsx-closing-bracket-location": ["error"],
+    "react/jsx-closing-tag-location": ["error"],
+    "react/jsx-tag-spacing": ["error"],
+    "react/jsx-curly-spacing": ["error"],
+    "react/jsx-boolean-value": ["error"],
+    "react/jsx-wrap-multilines": ["error"],
+    "react/jsx-no-bind": ["off"]
+  }
+}
