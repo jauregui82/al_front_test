@@ -115,7 +115,12 @@ class Home extends Component {
               })}
               {initialData?.posts?.data.length <
                 initialData?.posts?.meta?.totalCount && (
-                <button onClick={this.handleGetMoreData}>load more</button>
+                <button
+                  className={"btn-standar"}
+                  onClick={this.handleGetMoreData}
+                >
+                  load more
+                </button>
               )}
             </>
           )}

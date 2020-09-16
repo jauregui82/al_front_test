@@ -3,19 +3,6 @@
 .wrapper {
   padding: 3rem;
 }
-.edit-post {
-  position: relative;
-  top: 20px;
-  left: 1px;
-  z-index: 1;
-}
-.content-btn-action {
-  display: flex;
-  justify-content: space-between;
-  top: 23px;
-  position: relative;
-  z-index: 1;
-}
 
 .blog-post {
   position: relative;
@@ -35,24 +22,7 @@ textarea{
   margin-bottom: 3rem;
   min-height: 8rem;
 }
-h3 {
-  margin: 0 0 0.5rem 0;
-  color: #999;
-  font-size: 1.25rem;
-}
 
-h1 {
-  margin: 0 0 1rem 0;
-  font-size: 2.5rem;
-  letter-spacing: 0.5px;
-  color: #333;
-}
-
-p {
-  margin: 0 0 4.5rem 0;
-  font-size: 1.5rem;
-  color: #333;
-}
 
 .btn-primary {
   border: none;
@@ -71,13 +41,3 @@ p {
   }
 }
 
-.comments{
-    background: url($iconComment) no-repeat 0 .1em;
-    width: 16px;
-    height: 16px;
-    margin-right: 1rem;
-}
-.content-date-comments, .constent-comments{
-    display: flex;
-    justify-content: space-between; 
-}

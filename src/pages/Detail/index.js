@@ -1,7 +1,8 @@
 import React from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { Layout } from "../../components/Layout";
 import { useQuery, useMutation } from "@apollo/client";
+import { Helmet } from "react-helmet";
+import { Layout } from "../../components/Layout";
 import { GET_POST, DELETE_COMMENT, UPDATE_POST } from "../../models/Post";
 import CardPost from "../../components/CardPost";
 
@@ -56,6 +57,18 @@ const Detail = () => {
         <p>cargando...</p>
       ) : (
         <>
+          <Helmet>
+            <meta charSet="utf-8" />
+            <title>My Title</title>
+            <meta name="description" content={data?.post.body} />
+            <link
+              rel="me"
+              href="https://jauregui82.github.io/cv/"
+              type="text/html"
+            />
+            <link rel="me" href="mailto:jauregui.crespo@gmail.com" />
+            <link rel="me" href="sms:+56937393963" />
+          </Helmet>
           <CardPost
             origin={"detail"}
             id={data?.post.id}
