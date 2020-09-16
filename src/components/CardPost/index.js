@@ -39,7 +39,7 @@ const AddOrUpdatePost = ({ inputValues, changeValues }) => {
       />
       <textarea
         style={{ height: "7rem", marginBottom: "2rem" }}
-        value={inputValues.title}
+        value={inputValues.body}
         placeholder="Body"
         name={"body"}
         onChange={e => changeValues("body", e.target.value)}
