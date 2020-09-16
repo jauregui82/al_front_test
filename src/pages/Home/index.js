@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { gql } from "@apollo/client";
 import client from "../../config/apollo";
 import { Layout } from "../../components/Layout";
-import { CardPost } from "../../components/CardPost";
+import CardPost from "../../components/CardPost";
 
 class Home extends Component {
   constructor(props) {
@@ -32,12 +32,17 @@ class Home extends Component {
     console.log("add");
   };
 
+  handleNewOrUpdatePost = (flag, id, values) => {
+    console.log(flag, id, values);
+    this.updatDataPost(id, values);
+  };
+
   setData = () => {
     this.setState({ loading: true });
     const { paginate } = this.state;
     client
       .query({
-        query: gql`
+        query: gql`,
             {
                 posts(options: {paginate:{page:${paginate.page}, limit:${paginate.limit}}}) {
                     data {
@@ -69,11 +74,33 @@ class Home extends Component {
         console.log(result.data);
       });
   };
+
+  deletePost = id => {
+    this.setState({ loading: true });
+    fetch("https://graphqlzero.almansi.me/api", {
+      method: "POST",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify({
+        query: `
+        mutation{
+            deletePost(id: ${id})
+        }`
+      })
+    })
+      .then(res => res.json())
+      .then(res => {
+        console.log(res);
+        this.setState({ loading: false });
+      });
+  };
   render() {
     const { initialData, loading } = this.state;
     return (
       <>
-        <Layout handleAddNewPost={this.handleAddNewPost}>
+        <Layout
+          handleAddNewPost={this.handleAddNewPost}
+          count={initialData?.posts?.data}
+        >
           {loading ? (
             <p>cargando...</p>
           ) : (
@@ -87,6 +114,7 @@ class Home extends Component {
                     body={item.body}
                     comments={item.comments.data}
                     user={item.user}
+                    deletePost={this.deletePost}
                   />
                 );
               })}

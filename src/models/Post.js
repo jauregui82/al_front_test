@@ -42,4 +42,24 @@ const DELETE_COMMENT = gql`
     deleteComment(id: $id)
   }
 `;
-export { GET_ALL_POST, GET_POST, DELETE_COMMENT };
+
+const UPDATE_POST = gql`
+  mutation($id: ID!, $input: UpdatePostInput!) {
+    updatePost(id: $id, input: $input) {
+      id
+      body
+      title
+    }
+  }
+`;
+
+const CREATE_POST = gql`
+  mutation($input: CreatePostInput!) {
+    createPost(input: $input) {
+      id
+      title
+      body
+    }
+  }
+`;
+export { GET_ALL_POST, GET_POST, DELETE_COMMENT, UPDATE_POST, CREATE_POST };

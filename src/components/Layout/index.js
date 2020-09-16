@@ -1,14 +1,21 @@
 import React from "react";
 import "./style.scss";
+import { Link } from "react-router-dom";
 
-export const Layout = ({ children, handleAddNewPost }) => {
+const locationSend = () => ({
+  pathname: "/new-post",
+  state: { fromDashboard: true }
+});
+
+export const Layout = ({ children, count }) => {
+  console.log(count);
   return (
     <div style={{ position: "relative" }}>
       <header>
-        {handleAddNewPost && (
+        {count && (
           <div>
-            <button onClick={handleAddNewPost}> Add new post</button>
-            <span>post length</span>
+            <Link to={locationSend("new-post")}> Add new post</Link>
+            <span> {count.length} - post length</span>
           </div>
         )}
       </header>
