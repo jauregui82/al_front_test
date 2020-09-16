@@ -8,7 +8,6 @@ const locationSend = () => ({
 });
 
 export const Layout = ({ children, count }) => {
-  console.log(count);
   return (
     <div style={{ position: "relative" }}>
       <header>

@@ -17,7 +17,6 @@ const Detail = () => {
   });
 
   const deleteComment = e => {
-    console.log(e);
     handleDeleteComment(e);
   };
 
@@ -25,13 +24,9 @@ const Detail = () => {
     const payload = { id: id };
     try {
       await removeComment({ variables: payload });
-      //   const message = "";
-      //   enqueueSnackbar(message, { variant: "success" });
-      console.log("borrado");
+      alert("Deleted comment");
     } catch (e) {
-      console.log(e);
-      //   dispatch(updateLoader(false));
-      //   enqueueSnackbar("Error!", { variant: "error" });
+      console.error(e);
     }
   };
 
@@ -45,14 +40,10 @@ const Detail = () => {
     };
     try {
       await updatePost({ variables: payload });
-      //   const message = "";
-      //   enqueueSnackbar(message, { variant: "success" });
-      console.log("actualizada");
+      alert("Update post");
       history.push("/");
     } catch (e) {
-      console.log(e);
-      //   dispatch(updateLoader(false));
-      //   enqueueSnackbar("Error!", { variant: "error" });
+      console.error(e);
     }
   };
 

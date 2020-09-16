@@ -10,7 +10,7 @@ class Home extends Component {
     this.state = {
       initialData: [],
       loading: false,
-      paginate: { page: 1, limit: 6 }
+      paginate: { page: 1, limit: 10 }
     };
   }
   componentDidMount() {
@@ -21,19 +21,15 @@ class Home extends Component {
     const { paginate } = this.state;
     this.setState(
       prevState => ({
-        paginate: { ...prevState.paginate, limit: paginate.limit * 2 }
+        paginate: { ...prevState.paginate, limit: paginate.limit + 10 }
       }),
       () => {
         this.setData();
       }
     );
   };
-  handleAddNewPost = () => {
-    console.log("add");
-  };
 
   handleNewOrUpdatePost = (flag, id, values) => {
-    console.log(flag, id, values);
     this.updatDataPost(id, values);
   };
 
@@ -71,7 +67,6 @@ class Home extends Component {
         this.setState({ initialData: result.data }, () => {
           this.setState({ loading: false });
         });
-        console.log(result.data);
       });
   };
 
@@ -89,7 +84,7 @@ class Home extends Component {
     })
       .then(res => res.json())
       .then(res => {
-        console.log(res);
+        alert("Delete post");
         this.setState({ loading: false });
       });
   };

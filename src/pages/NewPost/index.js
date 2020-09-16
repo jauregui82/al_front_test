@@ -18,14 +18,10 @@ const NewPost = () => {
     };
     try {
       await addPost({ variables: payload });
-      //   const message = "";
-      //   enqueueSnackbar(message, { variant: "success" });
-      console.log("Creado");
+      alert("Created");
       history.push("/");
     } catch (e) {
-      console.log(e);
-      //   dispatch(updateLoader(false));
-      //   enqueueSnackbar("Error!", { variant: "error" });
+      console.error(e);
     }
   };
 
